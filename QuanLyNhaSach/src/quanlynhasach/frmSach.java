@@ -384,7 +384,7 @@ public class frmSach extends javax.swing.JInternalFrame {
                         data.remove(posRow);
                         tableSach.updateUI();
                         clearTextField();
-                        ControlHelper.showMessageInfomation(this, "Xoá thành công", "Thông báo");
+                        ControlHelper.getInstance().showMessageInfomation(this, "Xoá thành công", "Thông báo");
                     } else {
                         ControlHelper.getInstance().showMessageError(this, "Xoá thất bại", "Thông báo");
                     }

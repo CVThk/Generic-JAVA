@@ -9,10 +9,6 @@ import java.lang.reflect.Method;
 import java.sql.*;
 import java.util.ArrayList;
 import java.util.Vector;
-import java.util.logging.Level;
-import java.util.logging.Logger;
-import quanlynhasach.frmLoaiSach;
-
 /**
  *
  * @author Chau Thinh
@@ -31,13 +27,14 @@ public class JDBCHelper {
         try {
             Class.forName("com.microsoft.sqlserver.jdbc.SQLServerDriver");
         } catch (ClassNotFoundException ex) {
-            Logger.getLogger(JDBCHelper.class.getName()).log(Level.SEVERE, null, ex);
+            System.out.println(ex.getMessage());
         }
     }
 
     public static JDBCHelper getInstance() {
         if (instance == null) {
             instance = new JDBCHelper();
+            
         }
         return instance;
     }
@@ -54,7 +51,7 @@ public class JDBCHelper {
 
             connect = DriverManager.getConnection(this.getConnectionString());
         } catch (SQLException ex) {
-            Logger.getLogger(JDBCHelper.class.getName()).log(Level.SEVERE, null, ex);
+            System.out.println(ex.getMessage());
         }
         return connect;
     }
@@ -65,7 +62,7 @@ public class JDBCHelper {
                 connect.close();
             }
         } catch (SQLException ex) {
-            Logger.getLogger(JDBCHelper.class.getName()).log(Level.SEVERE, null, ex);
+            System.out.println(ex.getMessage());
         }
     }
 
@@ -104,7 +101,7 @@ public class JDBCHelper {
                         methodt.invoke(t, objValue);
                     }
                 } catch (Exception ex) {
-                    Logger.getLogger(frmLoaiSach.class.getName()).log(Level.SEVERE, null, ex);
+                    System.out.println(ex.getMessage());
                 }
 
             }

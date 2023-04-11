@@ -267,7 +267,7 @@ public class frmLoaiSach extends javax.swing.JInternalFrame {
                         data.remove(posRow);
                         tableLoaiSach.updateUI();
                         clearTextField();
-                        ControlHelper.showMessageInfomation(this, "Xoá thành công", "Thông báo");
+                        ControlHelper.getInstance().showMessageInfomation(this, "Xoá thành công", "Thông báo");
                     } else {
                         ControlHelper.getInstance().showMessageError(this, "Xoá thất bại", "Thông báo");
                     }
